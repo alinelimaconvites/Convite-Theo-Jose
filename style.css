@@ -2,104 +2,135 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* Remove o quadrado cinza ao tocar nos botões no celular */
 }
 
-body {
+html, body {
+    width: 100%;
+    height: 100%;
     background-color: #000;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Evita que a tela role ou balance */
 }
 
 /* Oculta páginas inativas */
 .pagina {
     display: none;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 100dvh; /* dvh garante adaptação perfeita à barra do navegador do celular */
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .pagina.ativa {
     display: flex;
 }
 
-/* Formatação de Vídeos */
+/* ===================================
+   VÍDEO RESPONSIVO PARA CELULAR
+   =================================== */
 .video-convite {
     width: 100%;
-    max-width: 450px;
-    height: 100%;
-    object-fit: cover;
+    height: 100dvh;
+    object-fit: cover; /* Faz o vídeo preencher toda a tela sem distorcer */
 }
 
-/* Layout da imagem PNG + Botões */
+/* ===================================
+   IMAGEM PNG E BOTÕES INTERATIVOS
+   =================================== */
 .card-convite {
     position: relative;
     width: 100%;
-    max-width: 450px;
-    height: 100vh;
+    max-width: 480px; /* Largura máxima proporcional de celular */
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagem-convite {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100dvh;
+    object-fit: cover; /* Ajusta a imagem sem esticar */
 }
 
-/* Botão de Música Fixo no Topo */
+/* ===================================
+   BOTÃO DE MÚSICA FIXO
+   =================================== */
 .botao-musica {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.8);
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
     border: none;
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Tela de Início */
+/* ===================================
+   TELA INICIAL DE ABERTURA
+   =================================== */
 .conteudo-inicio {
     text-align: center;
     color: white;
+    padding: 20px;
 }
 
 .btn-abrir {
     margin-top: 20px;
-    padding: 15px 30px;
+    padding: 16px 32px;
     font-size: 18px;
+    font-weight: bold;
     background-color: #e91e63;
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
 }
 
-/* Botões Interativos sobre o PNG */
+/* ===================================
+   POSICIONAMENTO DOS BOTÕES NO PNG
+   =================================== */
 .btn-interativo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
-    padding: 12px;
+    width: 80%; /* Largura do botão em relação à tela */
+    max-width: 320px;
+    padding: 14px 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 8px;
+    font-size: 16px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }
 
-/* Ajuste as alturas (top) conforme a arte do seu PNG */
-.btn-local { top: 65%; }
-.btn-confirmacao { top: 73%; }
-.btn-presentes { top: 81%; }
-.btn-voltar { top: 85%; }
+/* Regule a posição de cima para baixo mudando a porcentagem (top) */
+.btn-local {
+    top: 62%;
+}
+
+.btn-confirmacao {
+    top: 71%;
+}
+
+.btn-presentes {
+    top: 80%;
+}
+
+.btn-voltar {
+    top: 85%;
+}
