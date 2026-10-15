@@ -120,7 +120,7 @@ html, body {
 
 /* Regule a posição de cima para baixo mudando a porcentagem (top) */
 .btn-local {
-    top: 42%;
+    top: -50%;
 }
 
 .btn-confirmacao {
