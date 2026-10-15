@@ -1,14 +1,17 @@
 const musica = document.getElementById('musica');
 const btnMusica = document.getElementById('botao-musica');
 
-// 1. Inicia o convite, toca a música e dá play no 1º vídeo
+// 1. Inicia o convite ao clicar no botão da tela inicial
 function iniciarConvite() {
+    // Liga a música de fundo
     musica.play().catch(e => console.log("Aviso: Áudio bloqueado pelo navegador"));
+    
+    // Mostra a Página 1 e dá play no vídeo
     mostrarPagina('pagina1');
     tocarVideo('vid1');
 }
 
-// 2. Alterna Som ON/OFF
+// 2. Alterna o som entre LIGADO e DESLIGADO
 function alternarMusica() {
     if (musica.paused) {
         musica.play();
@@ -19,7 +22,7 @@ function alternarMusica() {
     }
 }
 
-// 3. Gerenciador de navegação entre seções
+// 3. Exibe a página desejada e oculta todas as outras
 function mostrarPagina(idPagina) {
     document.querySelectorAll('.pagina').forEach(p => p.classList.remove('ativa'));
     
@@ -29,7 +32,7 @@ function mostrarPagina(idPagina) {
     }
 }
 
-// 4. Toca um vídeo específico e agenda a transição ao finalizar
+// 4. Executa o vídeo e transiciona para o PNG assim que ele terminar
 function tocarVideo(idVideo) {
     const video = document.getElementById(idVideo);
     if (!video) return;
@@ -37,20 +40,8 @@ function tocarVideo(idVideo) {
     video.currentTime = 0;
     video.play();
 
-    // Evento disparado no exato segundo em que o vídeo encerra
+    // Quando o vídeo chegar ao fim, pula DIRETO para a página 5 (PNG com botões)
     video.onended = () => {
-        <!--if (idVideo === 'vid1') {-->
-            mostrarPagina('pagina2');
-            <!--tocarVideo('vid2');
-        } else if (idVideo === 'vid2') {
-            mostrarPagina('pagina3');
-            tocarVideo('vid3');
-        } else if (idVideo === 'vid3') {
-            mostrarPagina('pagina4');
-            tocarVideo('vid4');
-        } else if (idVideo === 'vid4') {
-            // Ao terminar o último vídeo, avança para a página PNG com os botões
-            mostrarPagina('pagina2');
-        }-->
+        mostrarPagina('pagina5');
     };
 }
