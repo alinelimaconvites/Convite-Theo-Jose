@@ -120,17 +120,17 @@ html, body {
 
 /* Regule a posição de cima para baixo mudando a porcentagem (top) */
 .btn-local {
-    top: -50%;
+    top: 1%;
 }
 
 .btn-confirmacao {
-    top: 51%;
+    top: 2%;
 }
 
 .btn-presentes {
-    top: 60%;
+    top: 3%;
 }
 
 .btn-voltar {
-    top: 65%;
+    top: 4%;
 }
