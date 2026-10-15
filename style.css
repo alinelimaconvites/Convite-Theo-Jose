@@ -5,115 +5,128 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+html,
+body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    overflow: hidden;
+    background: #000;
     font-family: Arial, sans-serif;
+}
+
+/* CONTAINER DAS PÁGINAS (PROPORÇÃO DE CELULAR 9:16) */
+.pagina {
+    position: fixed;
+    width: min(100vw, calc(100vh * 9 / 16));
+    height: min(100vh, calc(100vw * 16 / 9));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
     overflow: hidden;
 }
 
-/* Esconde as páginas inativas */
-.pagina {
-    display: none;
-    width: 100vw;
-    height: 100dvh;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
 .pagina.ativa {
-    display: flex;
-}
-
-/* Vídeos */
-.video-convite {
-    width: 100%;
-    height: 100dvh;
-    object-fit: cover;
-}
-
-/* Tela de Início */
-.conteudo-inicio {
-    text-align: center;
-    color: white;
-}
-
-.btn-abrir {
-    margin-top: 20px;
-    padding: 16px 32px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #e91e63;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.botao-musica {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-
-    background: rgba(255, 255, 255, 0.85);
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-/* ===================================
-   CARD DO CONVITE (CONTAINER BASE)
-   =================================== */
-.card-convite {
-    position: relative; /* Garante que os botões se posicionem em relação à imagem */
-    width: 100%;
-    max-width: 450px;
-    height: 100dvh;
     display: block;
 }
 
+/* VÍDEOS E IMAGENS DO CONVITE */
+.video-convite,
 .imagem-convite {
     width: 100%;
-    height: 100dvh;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Cover preenche sem distorcer as bordas */
     display: block;
 }
 
+/* BOTÃO DE MÚSICA FIXO */
+.botao-musica {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 22px;
+    z-index: 9999;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
 /* ===================================
-   BOTÕES TRANSPARENTES (ÁREAS CLICÁVEIS)
+   POSICIONAMENTO DOS BOTÕES TRANSPARENTES
    =================================== */
-.btn-interativo {
+
+/* Botão invisível sobre a tela inteira (usado para avançar telas se necessário) */
+.botao-avancar {
     position: absolute;
     left: 50%;
+    top: 0;
+    width: 100%;
+    height: 100%;
     transform: translateX(-50%);
-    width: 80%;            /* Largura da área clicável */
-    height: 50px;          /* Altura do seu botão desenhado */
-    background: transparent !important; /* Torna o fundo 100% invisível */
-    border: none !important;
-    outline: none;
+    background: transparent;
+    border: none;
+    z-index: 50;
     cursor: pointer;
-    z-index: 10;
 }
 
-/* REGULE A POSIÇÃO VERTICAL AQUI (0% é o topo da imagem, 100% é o fundo) */
-.btn-local {
-    top: 20%; /* Posição do botão de Localização */
+/* BOTÃO LOCALIZAÇÃO */
+.botao-local {
+    position: absolute;
+    width: 80%;            /* Largura da área de clique */
+    height: 8%;            /* Altura da área de clique */
+    left: 50%;
+    top: 42%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
 }
 
-.btn-confirmacao {
-    top: 80%; /* Posição do botão de Confirmação */
+/* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
+.botao-confirmacao {
+    position: absolute;
+    width: 80%;            /* Largura da área de clique */
+    height: 8%;            /* Altura da área de clique */
+    left: 50%;
+    top: 53%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
 }
 
-.btn-presentes {
-    top: 90%; /* Posição do botão de Presentes */
+/* BOTÃO LISTA DE PRESENTES */
+.botao-presentes {
+    position: absolute;
+    width: 80%;            /* Largura da área de clique */
+    height: 8%;            /* Altura da área de clique */
+    left: 50%;
+    top: 64%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
 }
 
+/* BOTÃO VOLTAR (CASO USE NA PÁGINA 3) */
 .btn-voltar {
-    top: 100%; /* Posição do botão de Voltar */
+    position: absolute;
+    width: 80%;
+    height: 8%;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
 }
