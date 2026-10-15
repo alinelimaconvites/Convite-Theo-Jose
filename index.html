@@ -10,139 +10,63 @@
 
 <body>
 
-    <!-- MÚSICA ÚNICA DO CONVITE -->
+    <!-- MÚSICA DE FUNDO -->
     <audio id="musica" loop>
         <source src="./musica.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- BOTÃO DA MÚSICA -->
-    <button id="botao-musica" class="botao-musica">
-        🔊
-    </button>
+    <!-- CONTROLE DE ÁUDIO -->
+    <button id="botao-musica" class="botao-musica" onclick="alternarMusica()">🔊</button>
 
+    <!-- TELA 0: BOTÃO INICIAL (Necessário para autorizar o áudio no celular) -->
+    <section id="inicio" class="pagina ativa">
+        <div class="conteudo-inicio">
+            <h2>Você recebeu um convite!</h2>
+            <button class="btn-abrir" onclick="iniciarConvite()">Abrir Convite ✨</button>
+        </div>
+    </section>
 
-    <!-- ==================== -->
-    <!-- PÁGINA 1 -->
-    <!-- ==================== -->
-
-    <section id="pagina1" class="pagina ativa">
-
-        <video class="video-convite" autoplay muted playsinline>
+    <!-- PÁGINA 1: VÍDEO 1 -->
+    <section id="pagina1" class="pagina">
+        <video id="vid1" class="video-convite" playsinline muted>
             <source src="./video.MP4" type="video/mp4">
         </video>
-
-        <button class="botao-avancar" onclick="mostrarPagina(2)">
-        </button>
-
     </section>
 
-
-    <!-- ==================== -->
-    <!-- PÁGINA 2 -->
-    <!-- ==================== -->
-
+       <!-- PÁGINA 2: TELA FINAL COM IMAGEM PNG E BOTÕES -->
     <section id="pagina2" class="pagina">
+        <div class="card-convite">
+            <img src="./page1.PNG" alt="Convite" class="imagem-convite">
 
-        <video class="video-convite" autoplay muted playsinline>
-            <source src="./2.mp4" type="video/mp4">
-        </video>
+            <!-- BOTÃO LOCAL -->
+            <a href="https://maps.app.goo.gl/H8YVceG6UMLabULH6" target="_blank" class="btn-interativo btn-local">
+                <!--📍 Ver Localização-->
+            </a>
 
-        <button class="botao-avancar" onclick="mostrarPagina(3)">
-          
-        </button>
+            <!-- BOTÃO CONFIRMAÇÃO -->
+            <a href="https://wa.me/5581983553729" target="_blank" class="btn-interativo btn-confirmacao">
+              <!--  ✅ Confirmar Presença-->
+            </a>
 
+            <!-- BOTÃO PRESENTES -->
+            <button class="btn-interativo btn-presentes" onclick="mostrarPagina('pagina3')">
+                <!--🎁 Lista de Presentes-->
+            </button>
+        </div>
     </section>
 
-
-    <!-- ==================== -->
-    <!-- PÁGINA 3 -->
-    <!-- ==================== -->
-
+    <!-- PÁGINA 3: LISTA DE PRESENTES (PNG OU DETALHES) -->
     <section id="pagina3" class="pagina">
-
-        <video class="video-convite" autoplay muted playsinline>
-            <source src="./3.mp4" type="video/mp4">
-        </video>
-
-        <button class="botao-avancar" onclick="mostrarPagina(4)">
+        <div class="card-convite">
+            <img src="./page3.PNG" alt="Lista de Presentes" class="imagem-convite">
             
-        </button>
-
+            <button class="btn-interativo btn-voltar" onclick="mostrarPagina('pagina5')">
+                ⬅️ Voltar ao Convite
+            </button>
+        </div>
     </section>
-
-
-    <!-- ==================== -->
-    <!-- PÁGINA 4 -->
-    <!-- ==================== -->
-
-    <section id="pagina4" class="pagina">
-
-        <video class="video-convite" autoplay muted playsinline>
-            <source src="./4.mp4" type="video/mp4">
-        </video>
-
-        <button class="botao-avancar" onclick="mostrarPagina(5)">
-            
-        </button>
-
-    </section>
-
-
-    <!-- ==================== -->
-    <!-- PÁGINA 5 -->
-    <!-- ==================== -->
-
-    <section id="pagina5" class="pagina">
-
-        <video class="video-convite" autoplay muted playsinline>
-            <source src="./5.mp4" type="video/mp4">
-        </video>
-
-
-        <!-- BOTÃO LOCAL -->
-
-        <a href="https://maps.app.goo.gl/H8YVceG6UMLabULH6"
-           target="_blank"
-           class="botao-local">
-        </a>
-
-
-        <!-- BOTÃO CONFIRMAÇÃO -->
-
-        <a href="https://wa.me/5581983553729"
-           target="_blank"
-           class="botao-confirmacao">
-        </a>
-
-
-        <!-- BOTÃO PRESENTES -->
-
-        <button class="botao-presentes" onclick="mostrarPagina(6)">
-        </button>
-
-    </section>
-
-
-    <!-- ==================== -->
-    <!-- PÁGINA 6 - PRESENTES -->
-    <!-- ==================== -->
-
-    <section id="pagina6" class="pagina">
-
-        <video class="video-convite" autoplay muted playsinline>
-            <source src="./6.mp4" type="video/mp4">
-        </video>
-
-        <!-- Conteúdo da página de presentes -->
-         <button class="botao-avancar" onclick="mostrarPagina(5)">
-            
-        </button>
-
-    </section>
-
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
