@@ -1,17 +1,17 @@
 const musica = document.getElementById('musica');
 const btnMusica = document.getElementById('botao-musica');
 
-// 1. Inicia o convite ao clicar no botão da tela inicial
+// 1. Quando clica no botão "Abrir Convite"
 function iniciarConvite() {
-    // Liga a música de fundo
-    musica.play().catch(e => console.log("Aviso: Áudio bloqueado pelo navegador"));
+    // Tenta tocar a música de fundo
+    musica.play().catch(e => console.log("Áudio aguardando interação:", e));
     
-    // Mostra a Página 1 e dá play no vídeo
+    // Mostra a Página 1 e dá play no vídeo 1
     mostrarPagina('pagina1');
     tocarVideo('vid1');
 }
 
-// 2. Alterna o som entre LIGADO e DESLIGADO
+// 2. Alternar o som (LIGAR / DESLIGAR)
 function alternarMusica() {
     if (musica.paused) {
         musica.play();
@@ -22,7 +22,7 @@ function alternarMusica() {
     }
 }
 
-// 3. Exibe a página desejada e oculta todas as outras
+// 3. Função para trocar as telas
 function mostrarPagina(idPagina) {
     document.querySelectorAll('.pagina').forEach(p => p.classList.remove('ativa'));
     
@@ -32,16 +32,27 @@ function mostrarPagina(idPagina) {
     }
 }
 
-// 4. Executa o vídeo e transiciona para o PNG assim que ele terminar
+// 4. Toca o vídeo e, quando terminar, VAI DIRETO PARA A PAGINA 2 (PNG)
 function tocarVideo(idVideo) {
     const video = document.getElementById(idVideo);
     if (!video) return;
 
     video.currentTime = 0;
-    video.play();
 
-    // Quando o vídeo chegar ao fim, pula DIRETO para a página 5 (PNG com botões)
+    // Dispara a troca para a Página 2 assim que o vídeo CHEGAR AO FIM
     video.onended = () => {
-        mostrarPagina('pagina5');
+        mostrarPagina('pagina2');
     };
+
+    // Tenta dar play no vídeo
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            console.log("Erro ao reproduzir vídeo:", error);
+            // Se o vídeo falhar em carregar/tocar por qualquer motivo, avança para a página 2 após 3 segundos
+            setTimeout(() => {
+                mostrarPagina('pagina2');
+            }, 3000);
+        });
+    }
 }
