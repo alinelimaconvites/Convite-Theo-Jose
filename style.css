@@ -98,7 +98,7 @@ html, body {
     border: none !important;
     outline: none;
     cursor: pointer;
-    z-index: 99;
+    z-index: 10;
 }
 
 /* REGULE A POSIÇÃO VERTICAL AQUI (0% é o topo da imagem, 100% é o fundo) */
