@@ -37,7 +37,7 @@ body {
 .imagem-convite {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover preenche sem distorcer as bordas */
+    object-fit: cover;
     display: block;
 }
 
@@ -52,88 +52,82 @@ body {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.85);
     font-size: 22px;
-    z-index: 9999;
+    z-index: 99999;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* ===================================
-   POSICIONAMENTO DOS BOTÕES TRANSPARENTES
-   =================================== */
+/* TELA DE INÍCIO */
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    color: white;
+    text-align: center;
+}
 
-/* Botão invisível sobre a tela inteira (usado para avançar telas se necessário) */
-/* ===================================
-   POSICIONAMENTO DOS BOTÕES TRANSPARENTES
-   =================================== */
+.conteudo-inicio h2 {
+    margin-bottom: 20px;
+}
 
-/* BOTÃO DE AVANÇAR TELA (Se for a tela inteira, coloque ele primeiro no HTML) */
-.botao-avancar {
-    position: absolute;
-    left: 0;
-    top: 0;
+.btn-abrir {
+    padding: 12px 24px;
+    font-size: 18px;
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===================================
+   CONTAINER DO CARD (PÁGINA 2)
+   =================================== */
+.card-convite {
+    position: relative; /* Essencial para os botões se basearem nele */
     width: 100%;
     height: 100%;
-    background: transparent;
-    border: none;
-    z-index: 50;
-    cursor: pointer;
 }
 
-/* DICA: Troque temporariamente 'background: transparent;' por 
-   'background: rgba(255, 0, 0, 0.4); border: 2px solid yellow;' 
-   para enxergar os botões na tela e ajustar as posições! */
+/* ===================================
+   POSICIONAMENTO DOS BOTÕES INTERATIVOS
+   =================================== */
+
+/* DICA: Deixei com cores visíveis para você achar e posicionar em cima da arte. 
+   Depois que ajustar, mude 'background: rgba(...)' para 'background: transparent;' */
+
+.btn-interativo {
+    position: absolute;
+    width: 80%;    /* Largura da área de clique */
+    height: 8%;    /* Altura da área de clique */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid yellow; /* Borda amarela para destaque */
+    z-index: 9999;
+    cursor: pointer;
+}
 
 /* BOTÃO LOCALIZAÇÃO */
-.botao-local {
-    position: absolute;
-    width: 80%;
-    height: 8%;
-    left: 50%;
-    bottom: 35%;
-    transform: translateX(-50%);
-    background: rgba(255, 0, 0, 0.6); /* Cor vermelha para você enxergar */
-    border: 3px solid yellow;         /* Borda amarela chamativa */
-    z-index: 99999;                   VALOR MÁXIMO para garantir que fica por cima
-    cursor: pointer;
-}
-
-/* BOTÃO LISTA DE PRESENTES */
-.botao-presentes {
-    position: absolute;
-    width: 80%;
-    height: 8%;
-    left: 50%;
-    bottom: 24%;
-    transform: translateX(-50%);
-    background: rgba(0, 255, 0, 0.6); /* Verde para diferenciar */
-    border: 3px solid yellow;
-    z-index: 99999;
-    cursor: pointer;
+.btn-local {
+    bottom: 35%; /* Mude aqui para subir/descer */
+    background: rgba(255, 0, 0, 0.5); /* Vermelho */
 }
 
 /* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
-.botao-confirmacao {
-    position: absolute;
-    width: 80%;
-    height: 8%;
-    left: 50%;
-    bottom: 13%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 255, 0.6); /* Azul para diferenciar */
-    border: 3px solid yellow;
-    z-index: 99999;
-    cursor: pointer;
+.btn-confirmacao {
+    bottom: 23%; /* Mude aqui para subir/descer */
+    background: rgba(0, 255, 0, 0.5); /* Verde */
 }
-/* BOTÃO VOLTAR */
+
+/* BOTÃO LISTA DE PRESENTES */
+.btn-presentes {
+    bottom: 11%; /* Mude aqui para subir/descer */
+    background: rgba(0, 0, 255, 0.5); /* Azul */
+}
+
+/* BOTÃO VOLTAR (Página 3) */
 .btn-voltar {
-    position: absolute;
-    width: 80%;
-    height: 8%;
-    left: 50%;
-    bottom: 3%;
-    transform: translateX(-50%);
-    background: transparent;
-    border: none;
-    z-index: 200;
-    cursor: pointer;
+    bottom: 5%;
+    background: rgba(255, 255, 0, 0.5); /* Amarelo */
 }
