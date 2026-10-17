@@ -81,7 +81,7 @@ body {
     width: 80%;            /* Largura da área de clique */
     height: 8%;            /* Altura da área de clique */
     left: 50%;
-    top: 42%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    top: 12%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
     transform: translateX(-50%);
     background: transparent;
     border: none;
@@ -95,7 +95,7 @@ body {
     width: 80%;            /* Largura da área de clique */
     height: 8%;            /* Altura da área de clique */
     left: 50%;
-    top: 53%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    top: 5%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
     transform: translateX(-50%);
     background: transparent;
     border: none;
@@ -109,7 +109,7 @@ body {
     width: 80%;            /* Largura da área de clique */
     height: 8%;            /* Altura da área de clique */
     left: 50%;
-    top: 64%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    top: 10%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
     transform: translateX(-50%);
     background: transparent;
     border: none;
