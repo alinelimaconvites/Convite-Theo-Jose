@@ -111,7 +111,7 @@ body {
 
 /* 1. CONFIRMAR PRESENÇA (Nuvem de cima) */
 .btn-confirmacao {
-    bottom: 46%;
+    bottom: 48%;
     background: rgba(0, 255, 0, 0.4); /* Verde */
 }
 
@@ -129,6 +129,6 @@ body {
 
 /* 4. CONTAGEM REGRESSIVA (Quarta nuvem, embaixo) */
 .btn-contagem {
-    bottom: 10%;
+    bottom: 5%;
     background: rgba(255, 255, 0, 0.4); /* Amarelo */
 }
