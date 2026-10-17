@@ -99,35 +99,36 @@ body {
 
 .btn-interativo {
     position: absolute;
-    width: 80%;    /* Largura da área de clique */
-    height: 7%;    /* Altura da área de clique */
+    width: 65%;       /* Largura ajustada para cobrir exatamente a nuvem */
+    height: 11%;      /* Altura de cada nuvem */
     left: 50%;
     transform: translateX(-50%);
-    border: 3px solid yellow; /* Borda amarela para destaque */
-    z-index: 10;
+    border: 3px solid yellow; /* Borda amarela para conferir se encaixou na nuvem */
+    z-index: 9999;
     cursor: pointer;
+    border-radius: 40px; /* Deixa o formato arredondado igual às nuvens */
 }
 
-/* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
+/* 1. CONFIRMAR PRESENÇA (Nuvem de cima) */
 .btn-confirmacao {
-    bottom: 50%; /* Mude aqui para subir/descer */
-    background: rgba(0, 255, 0, 0.5); /* Verde */
+    bottom: 53%;
+    background: rgba(0, 255, 0, 0.4); /* Verde */
 }
 
-/* BOTÃO LISTA DE PRESENTES */
+/* 2. SUGESTÃO DE PRESENTES (Segunda nuvem) */
 .btn-presentes {
-    bottom: 35%; /* Mude aqui para subir/descer */
-    background: rgba(0, 0, 255, 0.5); /* Azul */
+    bottom: 40%;
+    background: rgba(0, 0, 255, 0.4); /* Azul */
 }
 
-/* BOTÃO LOCALIZAÇÃO */
+/* 3. LOCAL NO MAPA (Terceira nuvem) */
 .btn-local {
-    bottom: 18%; /* Mude aqui para subir/descer */
-    background: rgba(255, 0, 0, 0.5); /* Vermelho */
+    bottom: 27%;
+    background: rgba(255, 0, 0, 0.4); /* Vermelho */
 }
 
-/* BOTÃO VOLTAR (Página 3) */
-.btn-voltar {
-    bottom: 20%;
-    background: rgba(255, 255, 0, 0.5); /* Amarelo */
+/* 4. CONTAGEM REGRESSIVA (Quarta nuvem, embaixo) */
+.btn-contagem {
+    bottom: 14%;
+    background: rgba(255, 255, 0, 0.4); /* Amarelo */
 }
