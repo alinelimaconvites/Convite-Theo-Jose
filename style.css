@@ -99,7 +99,7 @@ body {
     transform: translateX(-50%);
     background: transparent;
     border: none;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -113,7 +113,7 @@ body {
     transform: translateX(-50%);
     background: transparent;
     border: none;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -127,6 +127,6 @@ body {
     transform: translateX(-50%);
     background: transparent;
     border: none;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
 }
