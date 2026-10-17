@@ -89,11 +89,11 @@ body {
     width: 80%;
     height: 8%;
     left: 50%;
-    bottom: 35%; /* Mudei para bottom: sobe ou desce a partir de baixo */
+    bottom: 35%;
     transform: translateX(-50%);
-    background: transparent; 
-    border: none;
-    z-index: 200; /* Z-index alto para garantir o clique */
+    background: rgba(255, 0, 0, 0.6); /* Cor vermelha para você enxergar */
+    border: 3px solid yellow;         /* Borda amarela chamativa */
+    z-index: 99999;                   VALOR MÁXIMO para garantir que fica por cima
     cursor: pointer;
 }
 
@@ -103,11 +103,11 @@ body {
     width: 80%;
     height: 8%;
     left: 50%;
-    bottom: 24%; /* Ajuste a porcentagem aqui para subir/descer */
+    bottom: 24%;
     transform: translateX(-50%);
-    background: transparent;
-    border: none;
-    z-index: 200;
+    background: rgba(0, 255, 0, 0.6); /* Verde para diferenciar */
+    border: 3px solid yellow;
+    z-index: 99999;
     cursor: pointer;
 }
 
@@ -117,14 +117,13 @@ body {
     width: 80%;
     height: 8%;
     left: 50%;
-    bottom: 13%; /* Ajuste a porcentagem aqui para subir/descer */
+    bottom: 13%;
     transform: translateX(-50%);
-    background: transparent;
-    border: none;
-    z-index: 200;
+    background: rgba(0, 0, 255, 0.6); /* Azul para diferenciar */
+    border: 3px solid yellow;
+    z-index: 99999;
     cursor: pointer;
 }
-
 /* BOTÃO VOLTAR */
 .btn-voltar {
     position: absolute;
