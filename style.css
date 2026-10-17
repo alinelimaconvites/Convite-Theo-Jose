@@ -94,32 +94,51 @@ body {
    POSICIONAMENTO DOS BOTÕES COM FLEXBOX
    =================================== */
 
-/* Caixa invisível que segura os 4 botões e os distribui certinho nas nuvens */
 .container-botoes-nuvens {
     position: absolute;
     width: 65%;
-    height: 46%;          /* Altura exata que pega da primeira até a última nuvem */
-    bottom: 14%;          /* Distância correta para não encostar na frase de baixo */
+    height: 52%;          /* Aumentamos um pouquinho a altura geral da caixa */
+    bottom: 12%;          /* Mantém o de baixo (contagem) certinho onde já está */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribui os 4 botões perfeitamente de forma igualzinha */
+    justify-content: space-between;
     z-index: 9999;
 }
 
-/* ESTILO COMPARTILHADO DOS 4 BOTÕES */
+/* ESTILO COMPARTILHADO */
 .btn-nuvem {
     width: 100%;
-    height: 20%;          /* Ocupa o espaço ideal de cada nuvem */
+    height: 19%;
     border-radius: 30px;
-    border: 3px solid yellow; /* Borda amarela para você conferir o encaixe */
+    border: 3px solid yellow;
     cursor: pointer;
 }
 
-/* CORES DE TESTE PARA CADA NUVEM 
-   (Depois que alinhar tudo, basta trocar 'rgba(...)' por 'background: transparent;') */
-.btn-confirmacao { background: rgba(0, 255, 0, 0.5); } /* Verde (1ª nuvem) */
-.btn-presentes   { background: rgba(0, 0, 255, 0.5); } /* Azul (2ª nuvem) */
-.btn-local       { background: rgba(255, 0, 0, 0.5); } /* Vermelho (3ª nuvem) */
-.btn-contagem    { background: rgba(255, 255, 0, 0.5); } /* Amarelo (4ª nuvem) */
+/* ===================================
+   AJUSTE INDIVIDUAL PARA SUBIR OS DE CIMA
+   =================================== */
+
+/* 1. CONFIRMAR PRESENÇA (Sobe bastante) */
+.btn-confirmacao { 
+    background: rgba(0, 255, 0, 0.5); 
+    transform: translateY(-15px); /* Puxa ele para cima */
+} 
+
+/* 2. PRESENTES (Sobe um pouco) */
+.btn-presentes { 
+    background: rgba(0, 0, 255, 0.5); 
+    transform: translateY(-10px); /* Puxa ele para cima */
+} 
+
+/* 3. LOCAL (Sobe um pouquinho) */
+.btn-local { 
+    background: rgba(255, 0, 0, 0.5); 
+    transform: translateY(-5px);  /* Puxa ele para cima */
+} 
+
+/* 4. CONTAGEM (Fica exatamente onde já está certinho) */
+.btn-contagem { 
+    background: rgba(255, 255, 0, 0.5); 
+}
