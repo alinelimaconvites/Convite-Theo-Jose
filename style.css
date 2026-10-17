@@ -62,71 +62,79 @@ body {
    =================================== */
 
 /* Botão invisível sobre a tela inteira (usado para avançar telas se necessário) */
+/* ===================================
+   POSICIONAMENTO DOS BOTÕES TRANSPARENTES
+   =================================== */
+
+/* BOTÃO DE AVANÇAR TELA (Se for a tela inteira, coloque ele primeiro no HTML) */
 .botao-avancar {
     position: absolute;
-    left: 50%;
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    transform: translateX(-50%);
     background: transparent;
     border: none;
     z-index: 50;
     cursor: pointer;
 }
 
+/* DICA: Troque temporariamente 'background: transparent;' por 
+   'background: rgba(255, 0, 0, 0.4); border: 2px solid yellow;' 
+   para enxergar os botões na tela e ajustar as posições! */
+
 /* BOTÃO LOCALIZAÇÃO */
 .botao-local {
     position: absolute;
-    width: 80%;            /* Largura da área de clique */
-    height: 8%;            /* Altura da área de clique */
+    width: 80%;
+    height: 8%;
     left: 50%;
-    top: 12%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    bottom: 35%; /* Mudei para bottom: sobe ou desce a partir de baixo */
     transform: translateX(-50%);
-    background: transparent;
+    background: transparent; 
     border: none;
-    z-index: 100;
-    cursor: pointer;
-}
-
-/* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
-.botao-confirmacao {
-    position: absolute;
-    width: 80%;            /* Largura da área de clique */
-    height: 8%;            /* Altura da área de clique */
-    left: 50%;
-    top: 5%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
-    transform: translateX(-50%);
-    background: transparent;
-    border: none;
-    z-index: 10;
+    z-index: 200; /* Z-index alto para garantir o clique */
     cursor: pointer;
 }
 
 /* BOTÃO LISTA DE PRESENTES */
 .botao-presentes {
     position: absolute;
-    width: 80%;            /* Largura da área de clique */
-    height: 8%;            /* Altura da área de clique */
+    width: 80%;
+    height: 8%;
     left: 50%;
-    top: 10%;              /* REGULE AQUI: diminua % para subir, aumente para descer */
+    bottom: 24%; /* Ajuste a porcentagem aqui para subir/descer */
     transform: translateX(-50%);
     background: transparent;
     border: none;
-    z-index: 10;
+    z-index: 200;
     cursor: pointer;
 }
 
-/* BOTÃO VOLTAR (CASO USE NA PÁGINA 3) */
+/* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
+.botao-confirmacao {
+    position: absolute;
+    width: 80%;
+    height: 8%;
+    left: 50%;
+    bottom: 13%; /* Ajuste a porcentagem aqui para subir/descer */
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    z-index: 200;
+    cursor: pointer;
+}
+
+/* BOTÃO VOLTAR */
 .btn-voltar {
     position: absolute;
     width: 80%;
     height: 8%;
     left: 50%;
-    top: 80%;
+    bottom: 3%;
     transform: translateX(-50%);
     background: transparent;
     border: none;
-    z-index: 10;
+    z-index: 200;
     cursor: pointer;
 }
