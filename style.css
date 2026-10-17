@@ -110,24 +110,24 @@ body {
 
 /* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
 .btn-confirmacao {
-    bottom: 150%; /* Mude aqui para subir/descer */
+    bottom: 70%; /* Mude aqui para subir/descer */
     background: rgba(0, 255, 0, 0.5); /* Verde */
 }
 
 /* BOTÃO LISTA DE PRESENTES */
 .btn-presentes {
-    bottom: 100%; /* Mude aqui para subir/descer */
+    bottom: 50%; /* Mude aqui para subir/descer */
     background: rgba(0, 0, 255, 0.5); /* Azul */
 }
 
 /* BOTÃO LOCALIZAÇÃO */
 .btn-local {
-    bottom: 90%; /* Mude aqui para subir/descer */
+    bottom: 30%; /* Mude aqui para subir/descer */
     background: rgba(255, 0, 0, 0.5); /* Vermelho */
 }
 
 /* BOTÃO VOLTAR (Página 3) */
 .btn-voltar {
-    bottom: 50%;
+    bottom: 20%;
     background: rgba(255, 255, 0, 0.5); /* Amarelo */
 }
