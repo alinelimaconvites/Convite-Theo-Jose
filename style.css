@@ -108,22 +108,22 @@ body {
     cursor: pointer;
 }
 
-/* BOTÃO LOCALIZAÇÃO */
-.btn-local {
-    bottom: 35%; /* Mude aqui para subir/descer */
-    background: rgba(255, 0, 0, 0.5); /* Vermelho */
-}
-
 /* BOTÃO CONFIRMAÇÃO DE PRESENÇA */
 .btn-confirmacao {
-    bottom: 23%; /* Mude aqui para subir/descer */
+    bottom: 10%; /* Mude aqui para subir/descer */
     background: rgba(0, 255, 0, 0.5); /* Verde */
 }
 
 /* BOTÃO LISTA DE PRESENTES */
 .btn-presentes {
-    bottom: 11%; /* Mude aqui para subir/descer */
+    bottom: 25%; /* Mude aqui para subir/descer */
     background: rgba(0, 0, 255, 0.5); /* Azul */
+}
+
+/* BOTÃO LOCALIZAÇÃO */
+.btn-local {
+    bottom: 45%; /* Mude aqui para subir/descer */
+    background: rgba(255, 0, 0, 0.5); /* Vermelho */
 }
 
 /* BOTÃO VOLTAR (Página 3) */
