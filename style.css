@@ -16,7 +16,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* CONTAINER DAS PÁGINAS (PROPORÇÃO DE CELULAR 9:16) */
+/* CONTAINER DAS PÁGINAS (PROPORÇÃO DE TELEMÓVEL 9:16) */
 .pagina {
     position: fixed;
     width: min(100vw, calc(100vh * 9 / 16));
@@ -82,48 +82,49 @@ body {
 }
 
 /* ===================================
-   CONTAINER DO CARD (PÁGINA 2)
+   ESTILO BASE DOS BOTÕES DAS NUVENS
    =================================== */
-.card-convite {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* ESTILO BASE DOS BOTÕES DAS NUVENS */
 .btn-nuvem {
     position: absolute;
-    width: 65%;          /* Largura da nuvem */
-    height: 9%;          /* Altura da nuvem */
+    width: 65%;          /* Largura ideal para cobrir a nuvem */
+    height: 9%;          /* Altura para cada nuvem */
     left: 50%;
     transform: translateX(-50%);
-    background: transparent; /* Deixe transparent quando terminar de ajustar */
-    border: 3px solid yellow; /* Borda amarela para você enxergar e ajustar */
     border-radius: 40px;
     z-index: 9999;
     cursor: pointer;
+    
+    /* CORES TEMPORÁRIAS DE TESTE (Para ver onde estão a ficar) */
+    border: 3px solid yellow; 
 }
 
 /* 1. CONFIRMAR PRESENÇA (Nuvem 1 - Topo) */
 .btn-confirmacao {
-    top: 31%;
-    background: rgba(0, 255, 0, 0.4); /* Verde de teste */
+    top: 36%;
+    background: rgba(0, 255, 0, 0.4); /* Verde */
 }
 
 /* 2. SUGESTÃO DE PRESENTES (Nuvem 2) */
 .btn-presentes {
-    top: 43%;
-    background: rgba(0, 0, 255, 0.4); /* Azul de teste */
+    top: 50%;
+    background: rgba(0, 0, 255, 0.4); /* Azul */
 }
 
 /* 3. LOCAL NO MAPA (Nuvem 3) */
 .btn-local {
-    top: 55%;
-    background: rgba(255, 0, 0, 0.4); /* Vermelho de teste */
+    top: 58%;
+    background: rgba(255, 0, 0, 0.4); /* Vermelho */
 }
 
 /* 4. CONTAGEM REGRESSIVA (Nuvem 4 - Embaixo) */
 .btn-contagem {
-    top: 68%;
-    background: rgba(255, 255, 0, 0.4); /* Amarelo de teste */
+    top: 70%;
+    background: rgba(255, 255, 0, 0.4); /* Amarelo */
+}
+
+/* BOTÃO VOLTAR (Página 3) */
+.btn-voltar {
+    bottom: 5%;
+    top: auto; /* Anula o top padrão */
+    background: rgba(255, 255, 255, 0.4);
 }
