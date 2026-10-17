@@ -1,144 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+const musica = document.getElementById('musica');
+const btnMusica = document.getElementById('botao-musica');
+
+// 1. Quando clica no botão "Abrir Convite"
+function iniciarConvite() {
+    // Tenta tocar a música de fundo
+    musica.play().catch(e => console.log("Áudio aguardando interação:", e));
+    
+    // Mostra a Página 1 e dá play no vídeo 1
+    mostrarPagina('pagina1');
+    tocarVideo('vid1');
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #000;
-    font-family: Arial, sans-serif;
+// 2. Alternar o som (LIGAR / DESLIGAR)
+function alternarMusica() {
+    if (musica.paused) {
+        musica.play();
+        btnMusica.textContent = '🔊';
+    } else {
+        musica.pause();
+        btnMusica.textContent = '🔇';
+    }
 }
 
-/* CONTAINER DAS PÁGINAS (PROPORÇÃO DE CELULAR 9:16) */
-.pagina {
-    position: fixed;
-    width: min(100vw, calc(100vh * 9 / 16));
-    height: min(100vh, calc(100vw * 16 / 9));
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    overflow: hidden;
+// 3. Função para trocar as telas
+function mostrarPagina(idPagina) {
+    document.querySelectorAll('.pagina').forEach(p => p.classList.remove('ativa'));
+    
+    const paginaAlvo = document.getElementById(idPagina);
+    if (paginaAlvo) {
+        paginaAlvo.classList.add('ativa');
+    }
 }
 
-.pagina.ativa {
-    display: block;
-}
+// 4. Toca o vídeo e, quando terminar, VAI DIRETO PARA A PAGINA 2 (PNG)
+function tocarVideo(idVideo) {
+    const video = document.getElementById(idVideo);
+    if (!video) return;
 
-/* VÍDEOS E IMAGENS DO CONVITE */
-.video-convite,
-.imagem-convite {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+    video.currentTime = 0;
 
-/* BOTÃO DE MÚSICA FIXO */
-.botao-musica {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.85);
-    font-size: 22px;
-    z-index: 99999;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
+    // Dispara a troca para a Página 2 assim que o vídeo CHEGAR AO FIM
+    video.onended = () => {
+        mostrarPagina('pagina2');
+    };
 
-/* TELA DE INÍCIO */
-#inicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    color: white;
-    text-align: center;
-}
-
-.conteudo-inicio h2 {
-    margin-bottom: 20px;
-}
-
-.btn-abrir {
-    padding: 12px 24px;
-    font-size: 18px;
-    background: #ff4b5c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* ===================================
-   CONTAINER DO CARD (PÁGINA 2)
-   =================================== */
-.card-convite {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* ===================================
-   POSICIONAMENTO DOS BOTÕES COM FLEXBOX
-   =================================== */
-
-.container-botoes-nuvens {
-    position: absolute;
-    width: 65%;
-    height: 52%;          /* Aumentamos um pouquinho a altura geral da caixa */
-    bottom: 12%;          /* Mantém o de baixo (contagem) certinho onde já está */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 9999;
-}
-
-/* ESTILO COMPARTILHADO */
-.btn-nuvem {
-    width: 100%;
-    height: 19%;
-    border-radius: 30px;
-    border: 3px solid yellow;
-    cursor: pointer;
-}
-
-/* ===================================
-   AJUSTE INDIVIDUAL PARA SUBIR OS DE CIMA
-   =================================== */
-
-/* 1. CONFIRMAR PRESENÇA (Sobe bastante) */
-.btn-confirmacao { 
-    background: rgba(0, 255, 0, 0.5); 
-    transform: translateY(-20px); /* Puxa ele para cima */
-} 
-
-/* 2. PRESENTES (Sobe um pouco) */
-.btn-presentes { 
-    background: rgba(0, 0, 255, 0.5); 
-    transform: translateY(-10px); /* Puxa ele para cima */
-} 
-
-/* 3. LOCAL (Sobe um pouquinho) */
-.btn-local { 
-    background: rgba(255, 0, 0, 0.5); 
-    transform: translateY(-5px);  /* Puxa ele para cima */
-} 
-
-/* 4. CONTAGEM (Fica exatamente onde já está certinho) */
-.btn-contagem { 
-    background: rgba(255, 255, 0, 0.5); 
+    // Tenta dar play no vídeo
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            console.log("Erro ao reproduzir vídeo:", error);
+            // Se o vídeo falhar em carregar/tocar por qualquer motivo, avança para a página 2 após 3 segundos
+            setTimeout(() => {
+                mostrarPagina('pagina2');
+            }, 3000);
+        });
+    }
 }
