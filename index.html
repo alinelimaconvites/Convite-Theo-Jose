@@ -33,19 +33,29 @@
         </video>
     </section>
 
-       <!-- PÁGINA 2: TELA 2 COM IMAGEM PNG E BOTÕES -->
-   <section id="pagina2" class="pagina">
-    <div class="card-convite" style="background-image: url('./page2.png'); background-size: cover; background-position: center;">
-        
-        <div class="container-botoes-nuvens">
-            <a href="https://wa.me/5581983553729" target="_blank" class="btn-nuvem btn-confirmacao"></a>
-            <button class="btn-nuvem btn-presentes" onclick="mostrarPagina('pagina3')"></button>
-            <a href="https://maps.app.goo.gl/H8YVceG6UMLabULH6" target="_blank" class="btn-nuvem btn-local"></a>
-            <a href="SUA_OUTRA_PAGINA_AQUI.html" class="btn-nuvem btn-contagem"></a>
-        </div>
+   <!-- ==================== -->
+    <!-- PÁGINA 2 DAS NUVENS (COM OS 4 BOTÕES) -->
+    <!-- ==================== -->
 
-    </div>
-</section>
+    <section id="pagina2" class="pagina ativa"> <!-- (Mude para ativa ou chame pelo script) -->
+
+        <!-- Imagem de fundo do convite -->
+        <img src="./page2.png" alt="Convite" class="imagem-convite">
+
+        <!-- 1. BOTÃO CONFIRMAÇÃO -->
+        <a href="https://wa.me/5581983553729" target="_blank" class="btn-nuvem btn-confirmacao"></a>
+
+        <!-- 2. BOTÃO PRESENTES -->
+        <button class="btn-nuvem btn-presentes" onclick="mostrarPagina('pagina3')"></button>
+
+        <!-- 3. BOTÃO LOCAL -->
+        <a href="https://maps.app.goo.gl/H8YVceG6UMLabULH6" target="_blank" class="btn-nuvem btn-local"></a>
+
+        <!-- 4. BOTÃO CONTAGEM REGRESSIVA -->
+        <a href="SUA_OUTRA_PAGINA_AQUI.html" class="btn-nuvem btn-contagem"></a>
+
+    </section>
+
     <!-- PÁGINA 3: LISTA DE PRESENTES (PNG OU DETALHES) -->
     <section id="pagina3" class="pagina">
            <video id="vid1" class="video-convite" playsinline muted>
