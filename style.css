@@ -106,24 +106,24 @@ body {
 
 /* 1. CONFIRMAR PRESENÇA (Nuvem 1 - Topo) */
 .btn-confirmacao {
-    top: 34%;
+    top: 31%;
     background: rgba(0, 255, 0, 0.4); /* Verde de teste */
 }
 
 /* 2. SUGESTÃO DE PRESENTES (Nuvem 2) */
 .btn-presentes {
-    top: 46%;
+    top: 43%;
     background: rgba(0, 0, 255, 0.4); /* Azul de teste */
 }
 
 /* 3. LOCAL NO MAPA (Nuvem 3) */
 .btn-local {
-    top: 58%;
+    top: 55%;
     background: rgba(255, 0, 0, 0.4); /* Vermelho de teste */
 }
 
 /* 4. CONTAGEM REGRESSIVA (Nuvem 4 - Embaixo) */
 .btn-contagem {
-    top: 70%;
+    top: 68%;
     background: rgba(255, 255, 0, 0.4); /* Amarelo de teste */
 }
