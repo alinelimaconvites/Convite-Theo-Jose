@@ -111,24 +111,24 @@ body {
 
 /* 1. CONFIRMAR PRESENÇA (Nuvem de cima) */
 .btn-confirmacao {
-    bottom: 73%;
+    bottom: 50%;
     background: rgba(0, 255, 0, 0.4); /* Verde */
 }
 
 /* 2. SUGESTÃO DE PRESENTES (Segunda nuvem) */
 .btn-presentes {
-    bottom: 50%;
+    bottom: 44%;
     background: rgba(0, 0, 255, 0.4); /* Azul */
 }
 
 /* 3. LOCAL NO MAPA (Terceira nuvem) */
 .btn-local {
-    bottom: 40%;
+    bottom: 28%;
     background: rgba(255, 0, 0, 0.4); /* Vermelho */
 }
 
 /* 4. CONTAGEM REGRESSIVA (Quarta nuvem, embaixo) */
 .btn-contagem {
-    bottom: 30%;
+    bottom: 20%;
     background: rgba(255, 255, 0, 0.4); /* Amarelo */
 }
